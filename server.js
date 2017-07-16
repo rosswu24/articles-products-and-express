@@ -3,18 +3,27 @@
 const http = require('http');
 const express = require('express');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
-const articleRoute = require('./routes/article.js');
+
+
+// const articleRoute = require('./routes/articles.js');
 const productsRoute = require('./routes/products.js');
 
 
 const PORT = process.env.PORT || 3000;
 
-app.use('/routes', articleRoute);
+app.use(bodyParser.json());
 
-app.use('/routes', productsRoute);
+// app.use('/routes', articleRoute);
+app.use('/products', productsRoute);
 
-const server = app.listen(PORT, ()=>{
+// app.get('', (req, res) => {
+//   console.log("this is the name of the product: ", req);
+// });
+
+
+const server = app.listen(PORT, () => {
 	console.log(`server running on ${PORT}`);
 });
