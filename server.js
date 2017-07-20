@@ -23,6 +23,10 @@ app.use('/products', productsRoute);
 //   console.log("this is the name of the product: ", req);
 // });
 
+app.get('/products/:id', (req, res) => {
+  console.log("ID: " + req.params.id);
+});
+
 
 const server = app.listen(PORT, () => {
 	console.log(`server running on ${PORT}`);
