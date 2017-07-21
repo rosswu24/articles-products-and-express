@@ -9,6 +9,7 @@ function getAllProducts(){
 
 function getProductById(itemId){
   inventory.findIndex(x=> x.id ===itemId);
+  
 
 }
 
