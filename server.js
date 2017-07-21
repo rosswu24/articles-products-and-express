@@ -3,7 +3,7 @@
 const http = require('http');
 const express = require('express');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
+const bp = require('body-parser');
 const fs = require('fs');
 const app = express();
 
@@ -25,18 +25,12 @@ app.engine('hbs', hbs.engine);
 
 // use the handlebars engine
 app.set('view engine', 'hbs');
-app.use(bodyParser.json());
+app.use(bp.urlencoded());
+
 
 // app.use('/products', dbRoute);
 app.use('/products', productsRoute);
 
-app.get('', (req, res) => {
-  console.log("this is the name of the product: ", req);
-});
-
-app.get('/products/:id', (req, res) => {
-  console.log("ID: " + req.params.id);
-});
 
 // make server listen for data
 const server = app.listen(PORT, () => {
