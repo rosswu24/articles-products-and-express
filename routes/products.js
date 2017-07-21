@@ -1,27 +1,19 @@
 /*jshint esversion: 6*/
 const express = require('express');
 const router = express.Router();
-const items = [];
+const DS_products = require('../db/products.js');
+const app = express();
 
 router.route('/')
-
-
   .post((req, res) => {
-	// console.log("this is the object: ", req.body);
+	DS_products.createNewProduct(req.body);
+	res.end();
+	})
 
-function makeItem(){
-
-		for(var i = 0; i < items.legnth; i++){
-				var itemId= req.body['id'] = i;
-				console.log(itemId);
-				items.push(req.body);
-				console.log(items);
-			}
-}
-	makeItem();
-			res.end();
-
-		  });
+  .get((req,res) =>{
+  	// DS_products.getAllProducts(req.body);
+  	res.end();
+  });
 
 
 
