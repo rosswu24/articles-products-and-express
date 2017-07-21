@@ -21,11 +21,13 @@ router.route('/')
     const itemId = Number(req.params.id);
  		DB_products.getProductById(itemId);
  		res.end();
- 	});
+ 	})
 
-  // .put((req,res) => {
-  //   DB_products.getProductById()
-  // });
+  .put((req,res) => {
+    const itemId = Number(req.params.id);
+    DB_products.deleteById(itemId);
+    res.end();
+  });
 
 
 
