@@ -11,9 +11,15 @@ router.route('/')
 	})
 
   .get((req,res) =>{
-  	// DS_products.getAllProducts(req.body);
+  DS_products.getAllProducts(req.body);
   	res.end();
-  });
+  })
+
+ 	.get('/products/:id', (req,res)=>{
+ 		// DS_products.getProductById(req.param.id);
+ 		console.log(req.params.id);
+ 		res.end();
+ 	});
 
 
 

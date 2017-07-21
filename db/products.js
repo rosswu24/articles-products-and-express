@@ -3,10 +3,12 @@ const inventory = [];
 
 	
 function getAllProducts(){
-	// console.log(inventory);
+	console.log('All Products in inventory: ', inventory);
+	return inventory;
 }
 
-function getProductById(id){
+function getProductById(itemId){
+  inventory.findIndex(x=> x.id ===itemId);
 
 }
 
@@ -15,8 +17,11 @@ function deleteById(id){
 }
 
 function createNewProduct(product){
+	for(var i = 0; i <= inventory.length; i ++){
+		product.id = i;
+	}
 	inventory.push(product);
-	console.log('inventory', inventory);
+	console.log('New Product:', product);
 	return inventory;
 }
 
