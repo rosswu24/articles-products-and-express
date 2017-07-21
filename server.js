@@ -10,6 +10,7 @@ const app = express();
 
 // const articleRoute = require('./routes/articles.js');
 const productsRoute = require('./routes/products.js');
+const dbRoute = require('./db/products.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -26,7 +27,7 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 
-// app.use('/routes', articleRoute);
+// app.use('/products', dbRoute);
 app.use('/products', productsRoute);
 
 app.get('', (req, res) => {
