@@ -17,7 +17,9 @@ router.route('/')
 
  	router.route('/:id')
  	.get((req,res) => {
- 		DB_products.getProductById(req.body);
+    // console.log(DB_products);
+    const itemId = Number(req.params.id);
+ 		DB_products.getProductById(itemId);
  		res.end();
  	});
 
