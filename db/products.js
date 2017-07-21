@@ -7,8 +7,18 @@ function getAllProducts(){
 }
 
 function getProductById(itemId){
-  inventory.findIndex( x => x.id === itemId);
-  console.log('found item id: ' + itemId);
+  console.log("current inventory: ", inventory);
+  for (var i = 0; i < inventory.length; i++) {
+    console.log("inventory id:", inventory[i].id, "item id: ", itemId);
+    console.log("inventory id:", typeof inventory[i].id, "item id: ", typeof itemId);
+      if (inventory[i].id === itemId) {
+          console.log("found item: ", inventory[i]);
+          return inventory[i];
+      }
+  }
+
+  // inventory.findIndex( x => x.id === itemId);
+  // console.log('found item id: ' + itemId);
   // want to return whole obj
 
 }
