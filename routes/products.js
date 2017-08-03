@@ -12,21 +12,27 @@ router.route('/')
 
   .get((req,res) => {
   DB_products.getAllProducts(req.body);
-  	res.end();
+	res.end();
   });
 
- 	router.route('/:id')
- 	.get((req,res) => {
-    // console.log(DB_products);
-    const itemId = Number(req.params.id);
- 		DB_products.getProductById(itemId);
- 		res.end();
- 	})
+	router.route('/:id')
+	.get((req,res) => {
+	// console.log(DB_products);
+	const itemId = Number(req.params.id);
+		DB_products.getProductById(itemId);
+		res.end();
+	})
 
   .put((req,res) => {
-    const itemId = Number(req.params.id);
-    DB_products.deleteById(itemId);
-    res.end();
+	const itemId = Number(req.params.id);
+	DB_products.deleteById(itemId);
+	res.end()
+
+	.put((req,res)=>{
+		const itemId = Number(req.params.id);
+		DB_products.editById(itemId);
+		res.end();
+	});
   });
 
 
