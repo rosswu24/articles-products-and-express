@@ -31,7 +31,11 @@ router.route('/')
 
 	.put((req,res)=>{
 		const itemId = Number(req.params.id);
-		DB_products.editById(itemId);
+    const newName = req.body.name;
+    const newPrice = req.body.price;
+    const newCount = req.body.inventory;
+
+		DB_products.editById(itemId, newName, newPrice, newCount);
 		res.end();
 	});
 
