@@ -14,41 +14,39 @@ function getAllProducts(){
 }
 
 function getProductById(itemId){
-  console.log("current inventory: ", inventory);
+	console.log("itemid " + itemId);
   for (var i = 0; i < inventory.length; i++) {
-    console.log("inventory id:", inventory[i].id, "item id: ", itemId);
-    console.log("inventory id:", typeof inventory[i].id, "item id: ", typeof itemId);
-    if (inventory[i].id === itemId) {
-        console.log("found item: ", inventory[i]);
-        return inventory[i];
-    }
+	if (inventory[i].id == itemId) {
+  	console.log("inventory " + inventory[i].id);
+		return inventory[i];
+	}
   }
 }
 
 function editById(itemId, newName, newPrice, newCount){
   for (var i = 0; i < inventory.length; i++) {
-    if (inventory[i].id === itemId) {
-      console.log("inventory id:", inventory[i].id, "item id: ", itemId);
-      console.log("item to edit:", inventory[i]);
-        var itemIdx = inventory.indexOf(inventory[i]);
-        console.log(newName, newPrice, newCount);
-        inventory[itemIdx] = {name: newName, price: newPrice, inventory: newCount, id: itemId};
-        console.log("changes made to inventory:", inventory);
-        return inventory;
-    }
+	if (inventory[i].id === itemId) {
+	  console.log("inventory id:", inventory[i].id, "item id: ", itemId);
+	  console.log("item to edit:", inventory[i]);
+		var itemIdx = inventory.indexOf(inventory[i]);
+		console.log(newName, newPrice, newCount);
+		inventory[itemIdx] = {name: newName, price: newPrice, inventory: newCount, id: itemId};
+		console.log("changes made to inventory:", inventory);
+		return inventory;
+	}
   }
 }
 
 function deleteById(itemId){
   for (var i = 0; i < inventory.length; i++) {
-    if (inventory[i].id === itemId) {
-      console.log("inventory id:", inventory[i].id, "item id: ", itemId);
-      console.log("item to delete:", inventory[i]);
-        var itemIdx = inventory.indexOf(inventory[i]);
-        inventory.splice(itemIdx, 1);
-        console.log("current inventory:", inventory);
-        return inventory;
-    }
+	if (inventory[i].id === itemId) {
+	  console.log("inventory id:", inventory[i].id, "item id: ", itemId);
+	  console.log("item to delete:", inventory[i]);
+		var itemIdx = inventory.indexOf(inventory[i]);
+		inventory.splice(itemIdx, 1);
+		console.log("current inventory:", inventory);
+		return inventory;
+	}
   }
 }
 
