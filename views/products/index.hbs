@@ -1,10 +1,12 @@
-<div class="products">
-  <h3>Log of Current Inventory</h3>
+<h3>Log of Current Inventory</h3>
+<ul class="products">
   {{#each products}}
-  <li>{{id}}</li>
-  <li>{{name}}</li>
-  <li>{{price}}</li>
-  <li>{{inventory}}</li>
-  <br>
+    <li class="item">
+      <p>{{id}}</p>
+      <p>{{name}}</p>
+      <p>{{price}}</p>
+      <p>{{inventory}}</p>
+      <br>
+    </li>
   {{/each}}
-</div>
+</ul>
