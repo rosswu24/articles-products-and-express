@@ -24,8 +24,9 @@ function editById(itemId, newName, newPrice, newCount){
       console.log("inventory id:", inventory[i].id, "item id: ", itemId);
       console.log("item to edit:", inventory[i]);
         var itemIdx = inventory.indexOf(inventory[i]);
-        inventory[itemIdx] = `{name: ${newName}, price: ${newPrice}, inventory: ${newCount}, id: itemId}`;
-        console("changes made to inventory:", inventory);
+        console.log(newName, newPrice, newCount);
+        inventory[itemIdx] = {name: newName, price: newPrice, inventory: newCount, id: itemId};
+        console.log("changes made to inventory:", inventory);
         return inventory;
     }
   }
@@ -60,6 +61,7 @@ module.exports = {
 	createNewProduct,
 	deleteById,
 	getProductById,
+  editById,
 	getAllProducts
 
 };
