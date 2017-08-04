@@ -7,20 +7,21 @@ const app = express();
 router.route('/')
   .post((req, res) => {
 	DB_products.createNewProduct(req.body);
+  res.render('products/index', {products:inventory});
 	res.end();
 	})
 
   .get((req,res) => {
   DB_products.getAllProducts(req.body);
-	res.end();
+  res.render('products/index');
   });
 
 	router.route('/:id')
 	.get((req,res) => {
 	// console.log(DB_products);
 	const itemId = Number(req.params.id);
-		DB_products.getProductById(itemId);
-		res.end();
+	DB_products.getProductById(itemId);
+	res.end();
 	})
 
   .delete((req,res) => {
@@ -39,5 +40,9 @@ router.route('/')
 		res.end();
 	});
 
+// app.get('/:id/edit', (req,res) => {
+//   DB_products.getProductById(itemId);
+//   res.end();
+//   });
 
 	module.exports = router;
