@@ -7,13 +7,13 @@ const app = express();
 router.route('/')
   .post((req, res) => {
 	DB_products.createNewProduct(req.body);
-  res.render('products/index', {products:inventory});
+  res.render('products/new');
 	res.end();
 	})
 
   .get((req,res) => {
-  DB_products.getAllProducts(req.body);
-  res.render('products/index');
+  const products = DB_products.getAllProducts(req.body);
+  res.render('products/index', {products});
   });
 
 	router.route('/:id')
