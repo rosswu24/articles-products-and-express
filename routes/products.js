@@ -23,18 +23,17 @@ router.route('/')
 		res.end();
 	})
 
-  .put((req,res) => {
+  .delete((req,res) => {
 	const itemId = Number(req.params.id);
 	DB_products.deleteById(itemId);
-	res.end()
+	res.end();
+  })
 
 	.put((req,res)=>{
 		const itemId = Number(req.params.id);
 		DB_products.editById(itemId);
 		res.end();
 	});
-  });
-
 
 
 	module.exports = router;

@@ -25,7 +25,7 @@ function editById(itemId, newName, newPrice, newCount){
       console.log("item to edit:", inventory[i]);
         var itemIdx = inventory.indexOf(inventory[i]);
         inventory[itemIdx] = `{name: ${newName}, price: ${newPrice}, inventory: ${newCount}, id: itemId}`;
-        console(inventory);
+        console("changes made to inventory:", inventory);
         return inventory;
     }
   }
@@ -38,7 +38,7 @@ function deleteById(itemId){
       console.log("item to delete:", inventory[i]);
         var itemIdx = inventory.indexOf(inventory[i]);
         inventory.splice(itemIdx, 1);
-        console.log(inventory);
+        console.log("current inventory:", inventory);
         return inventory;
     }
   }
