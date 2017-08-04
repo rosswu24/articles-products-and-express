@@ -1,5 +1,12 @@
 /*jshint esversion: 6*/
-const inventory = [];
+const inventory = [
+
+  {name: 'pants', price: "$55", inventory: "80", id: "0"},
+  {name: 't-shirt', price: "$20", inventory: "100", id: "1"},
+  {name: 'socks', price: "$7", inventory: "30", id: "2"},
+  {name: 'tie', price: "$14", inventory: "5", id: "3"},
+
+];
 
 function getAllProducts(){
 	console.log('current inventory: ', inventory);
